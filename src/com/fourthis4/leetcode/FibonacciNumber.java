@@ -13,6 +13,11 @@ package com.fourthis4.leetcode;
  */
 public class FibonacciNumber {
 
+    /**
+     * 通过原始定义求解，使用递归，但这也带来个问题，堆栈过多时会抛错
+     * @param n
+     * @return
+     */
     public int fib(int n) {
         if (n == 0) {
             return 0;
@@ -41,6 +46,17 @@ public class FibonacciNumber {
         }
 
         return r;
+    }
+
+    public static void main(String[] args) {
+        FibonacciNumber obj = new FibonacciNumber();
+        try {
+            obj.fib(10000);
+        } catch (Throwable e) {
+            System.out.println("出错了");
+        }
+        System.out.println(obj.fib_1(10000) + " 没出错");
+
     }
 
 }
